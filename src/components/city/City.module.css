@@ -1,0 +1,17 @@
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: white; 
+    background: linear-gradient(45deg, #010d44 0%, #3e237c 50%, #6b8f67 100%);
+    width: 14rem;
+    height: 21rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    border: 1.5px solid rgb(24, 51, 36);
+    border-radius: 1rem;
+    box-shadow: 2px 3px 15px 3px rgba(76, 99, 133, 0.6);
+}
