@@ -1,16 +1,12 @@
 import React, { useState } from "react";
 import c from "./SearchBar.module.css";
 import { Link } from "react-router-dom";
-import { createBrowserHistory } from 'history';
+// import { connect } from "react-redux";
+// import { obtenerCiudad } from "../../redux/actions/climaActions";
 
 export default function SearchBar( {onSearch} ) {
 
     const [city, setCity] = useState('');
-    const history = createBrowserHistory();
-
-    function inicio () {
-        history.push('/');
-    }
 
     function valid (text) {
         let test = text.replaceAll(' ', '').split('').map(e => isNaN(e));
@@ -38,7 +34,6 @@ export default function SearchBar( {onSearch} ) {
                 else {
                     onSearch(city);
                     setCity('');
-                    inicio();
                 }
             }}>
                 <input
@@ -55,3 +50,17 @@ export default function SearchBar( {onSearch} ) {
         </nav>
     )
 }
+
+// function mapStateToProps(state) {           //      ESTO ES LA SUBSCRIPCIÓN
+//     return {
+//         ciudades: state.ciudades            //      DEL ESTADO ME TRAIGO LA PROPIEDAD QUE QUIERO
+//     }
+// }
+
+// function mapDispatchToProps(dispatch) {     //      ACÁ ME TRAIGO LA CAPACIDAD DE DESPACHAR ACCIONES
+//     return {
+//         obtenerCiudad: () => dispatch(obtenerCiudad())      //  LA ACCIÓN QUE ME TRAJE ES LA DE OBTENER_CIUDAD
+//     }
+// }
+
+// export default connect ( mapStateToProps, mapDispatchToProps ) (SearchBar)

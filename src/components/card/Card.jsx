@@ -39,3 +39,4 @@ export default function Card({name, temp, img, description, max, min, humidity, 
         </article>
     )
 }
+

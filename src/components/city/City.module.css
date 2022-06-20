@@ -5,7 +5,7 @@
     align-items: center;
     flex-direction: column;
     background: white; 
-    background: linear-gradient(45deg, #010d44 0%, #3e237c 50%, #6b8f67 100%);
+    background: linear-gradient(45deg, #031a0a 0%, #0c203a 50%, #010711 100%);
     width: 14rem;
     height: 21rem;
     margin-left: auto;
@@ -13,5 +13,7 @@
     margin-top: 2rem;
     border: 1.5px solid rgb(24, 51, 36);
     border-radius: 1rem;
-    box-shadow: 2px 3px 15px 3px rgba(76, 99, 133, 0.6);
+    box-shadow: 1px 2px 5px 2px rgba(26, 56, 46, 0.6);
+    color: white;
+    opacity: 0.8;
 }

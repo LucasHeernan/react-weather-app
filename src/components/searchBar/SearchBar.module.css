@@ -5,7 +5,9 @@
     align-items: center;
     text-align: center;
     background: linear-gradient(0deg,  #1f3c53 0%,#153452 50%,#071427 100%);
+    opacity: 0.9;
     border-bottom: 1px solid #2b2141;
+    border-radius: 2rem;
     box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.3);
     padding: 0.6rem 2rem;
     margin-bottom: 3rem;
@@ -32,7 +34,7 @@
 }
 
 .input {
-    border-radius: 7px;
+    border-radius: 0.7rem;
     margin-right: 3px;
     height: 1.8rem;
 }
@@ -41,7 +43,7 @@
     color: black;
     border: 2px rgb(255, 255, 1) solid;
     background-color: rgb(255, 255, 1);
-    border-radius: 7px;
+    border-radius: 0.9rem;
     text-align: center;
     width: 6rem;
     height: 1.8rem;
@@ -52,3 +54,4 @@
     border: 2px rgb(255, 255, 1) solid;
     background-color: black;
 }
+

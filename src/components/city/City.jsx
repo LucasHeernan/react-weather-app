@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import { createBrowserHistory } from 'history';
 import c from "./City.module.css"
 
 export default function City() {
 
-    const history = createBrowserHistory();
     const clave = useParams();
     const apiKey = '4ae2636d8dfbdc3044bede63951a019b';
     const [city, setCity] = useState();
@@ -25,7 +23,7 @@ export default function City() {
         setCity(miami);
     })
 
-    return !city ? (<h1 className={c.container} >Cargando...</h1> /* console.log(history) */ ) :
+    return !city ? (<h1 className={c.container} >Cargando...</h1>) :
     (
         <article className={c.container} >
             <h2>{city.name}</h2>

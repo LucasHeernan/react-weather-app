@@ -2,16 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { BrowserRouter, unstable_HistoryRouter as HistoryRouter } from 'react-router-dom';
-import { createBrowserHistory } from "history";
-
-const history = createBrowserHistory({ window });
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <HistoryRouter history={history}>
-    {/* <BrowserRouter> */}
+  <Provider store={store}>
+    <BrowserRouter>
       <App />
-    {/* </BrowserRouter> */}
-  </HistoryRouter>
+    </BrowserRouter>
+  </Provider>
 );
