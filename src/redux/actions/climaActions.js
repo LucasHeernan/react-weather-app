@@ -1,4 +1,4 @@
-import { OBTENER_CIUDAD, MAS_DETALLES, ELIMINAR_CIUDAD } from "../action-types/actionTypes";
+import { OBTENER_CIUDAD, MAS_DETALLES, ELIMINAR_CIUDAD, CLEAR_DETAILS } from "../action-types/actionTypes";
 
 const apiKey = 'f04ac54b99ccc56ac6f1b07c0fbc336d';
 
@@ -32,25 +32,6 @@ export function eliminarCiudad(ciudadId) {
     }
 }
 
-// export function masDetalles(ciudadId) {
-//     return function(dispatch) {
-//         fetch(`http://api.openweathermap.org/data/2.5/weather?id=${ciudadId}&appid=${apiKey}&units=metric`)
-//         .then(resp => resp.json())
-//         .then(data => {
-//             let city = {
-//                 name: data.name,
-//                 temp: data.main.temp,
-//                 weather: data.weather[0].main,
-//                 wind: data.wind.speed,
-//                 clouds: data.clouds.all,
-//                 latitud: data.coord.lat,
-//                 longitud: data.coord.lon
-//             }
-//             return dispatch({ type: MAS_DETALLES, payload: city })
-//         })
-//         .catch(err => console.log('ERROR :',err))
-//     }
-// }
 export function masDetalles(ciudadId) {
     return async (dispatch) => {
         try {
@@ -65,10 +46,16 @@ export function masDetalles(ciudadId) {
                 latitud: data.coord.lat,
                 longitud: data.coord.lon
             }
-            // console.log(city)
             return dispatch({ type: MAS_DETALLES, payload: city })
         } catch (err) {
             console.log('ERROR :',err)
         }
+    }
+}
+
+export function clearDetails(payload){
+    return {
+        type: CLEAR_DETAILS,
+        payload: [],
     }
 }

@@ -62,8 +62,8 @@
 import React from "react";
 import c from "./City.module.css";
 import { useParams } from "react-router-dom";
-import { masDetalles } from "../../redux/actions/climaActions";
-import { useState, useEffect } from "react";
+import { masDetalles, clearDetails } from "../../redux/actions/climaActions";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function City() {
@@ -71,33 +71,27 @@ export default function City() {
     const dispatch = useDispatch();
     const { ciudadId } = useParams();
     const ciudad = useSelector((state) => state.ciudad);
-
-    const [state, setState] = useState({})
     
     useEffect(() => {
         dispatch(masDetalles(ciudadId));
-        // console.log(state);
-    }, [dispatch])
+        return () => dispatch(clearDetails())
+    }, [dispatch, ciudadId])
     
-    useEffect(() => {
-        setState(() => ciudad);
-    }, [state])
-
-    if (Object.keys(state).length < 2) {
+    if (Object.keys(ciudad).length < 2) {
         return (
             <h1 className={c.container} >Cargando...</h1>
         )
     }
     return (
         <article className={c.container} >
-            <h2>{state.name}</h2>
+            <h2>{ciudad.name}</h2>
             <section className="info">
-                <p>Temperatura: {state.temp} ºC</p>
-                <p>Clima: {state.weather}</p>
-                <p>Viento: {state.wind} km/h</p>
-                <p>Cantidad de nubes: {state.clouds}</p>
-                <p>Latitud: {state.latitud}º</p>
-                <p>Longitud: {state.longitud}º</p>
+                <p>Temperatura: {ciudad.temp} ºC</p>
+                <p>Clima: {ciudad.weather}</p>
+                <p>Viento: {ciudad.wind} km/h</p>
+                <p>Cantidad de nubes: {ciudad.clouds}</p>
+                <p>Latitud: {ciudad.latitud}º</p>
+                <p>Longitud: {ciudad.longitud}º</p>
             </section>
         </article>
     )

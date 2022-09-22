@@ -1,3 +1,4 @@
 export const OBTENER_CIUDAD = 'OBTENER_CIUDAD';
 export const MAS_DETALLES = 'MAS_DETALLES';
 export const ELIMINAR_CIUDAD = 'ELIMINAR_CIUDAD';
+export const CLEAR_DETAILS = 'CLEAR_DETAILS';
